@@ -18,7 +18,9 @@ This package provides two main classes:
 
 ## Installation
 
-Clone the repository and install via pip (if using `setup.py`):
+Clone the repository and install via pip using the provided setup script.
+
+### Standard Installation
 
 ```bash
 git clone https://github.com/loryzeta33/tic_tac_toe.git
@@ -26,13 +28,37 @@ cd tic_tac_toe
 pip install .
 ```
 
-Alternatively, if using a virtual environment:
+## Development Setup
 
-```bash
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-pip install -r requirements.txt
-```
+For development and testing, it is recommended to install the package in editable mode so that source code changes are immediately reflected.
+
+1. **Clone the repository:**
+
+   ```bash
+   git clone https://github.com/loryzeta33/tic_tac_toe.git
+   cd tic_tac_toe
+   ```
+
+2. **Create and activate a virtual environment:**
+
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # On Windows: venv\Scripts\activate
+   ```
+
+3. **Install the package in editable mode:**
+
+   ```bash
+   pip install -e .
+   ```
+
+4. **Run the tests:**
+
+   ```bash
+   python -m unittest discover -s tests
+   ```
+
+Installing in editable mode ensures that the package (located in the `src/tic_tac_toe/` folder) is correctly added to the Python path, allowing tests to import the module without issues.
 
 ## Usage
 
@@ -59,11 +85,13 @@ print("Scores:", game)
 
 ## Running Tests
 
-Tests are provided using Python's `unittest` framework. To run them, execute:
+After installing in editable mode as shown in the Development Setup, run:
 
 ```bash
 python -m unittest discover -s tests
 ```
+
+This command will discover and run all tests in the `tests/` directory.
 
 ## License
 
